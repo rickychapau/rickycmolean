@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricky Chapau | Portfolio</title>
+    <style>
+        /* ===== Base & Reset ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+        body { line-height: 1.6; color: #fff; background: #0f0c29; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); }
+        a { text-decoration: none; color: inherit; }
+
+        /* Navbar */
+        header { width: 100%; position: fixed; top: 0; left: 0; z-index: 1000; background: rgba(0,0,0,0.7); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #f0a500; }
+        ul { display: flex; list-style: none; }
+        li { margin-left: 2rem; }
+        li a { color: #fff; font-weight: 500; transition: 0.3s; }
+        li a:hover { color: #f0a500; }
+
+        /* Burger */
+        .burger { display: none; cursor: pointer; flex-direction: column; }
+        .burger div { width: 25px; height: 3px; background: #fff; margin: 4px 0; transition: all 0.3s ease; }
+
+        /* Hero Section */
+        #hero { display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center; padding-top: 70px; animation: fadeIn 1.5s ease-in; }
+        #hero img { width: 160px; height: 160px; border-radius: 50%; border: 4px solid #f0a500; margin-bottom: 1rem; }
+        #hero h1 { font-size: 3rem; margin-bottom: 0.5rem; color: #f0a500; text-shadow: 2px 2px 5px #000; }
+        #hero p { font-size: 1.3rem; color: #ddd; margin-bottom: 1rem; }
+        .btn { display: inline-block; padding: 0.7rem 1.5rem; background: #f0a500; color: #fff; border-radius: 5px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .btn:hover { background: #fff; color: #f0a500; transform: translateY(-3px); }
+
+        /* Sections */
+        section { padding: 5rem 2rem; max-width: 1000px; margin: auto; animation: fadeIn 1.2s ease-in; }
+        h2 { text-align: center; margin-bottom: 2rem; font-size: 2.2rem; color: #f0a500; text-shadow: 1px 1px 3px #000; }
+
+        /* Skills */
+        .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+        .skill { background: rgba(240, 165, 0, 0.8); color: #fff; padding: 0.8rem 1.2rem; border-radius: 50px; font-weight: 600; transition: transform 0.3s, background 0.3s; }
+        .skill:hover { transform: scale(1.1); background: #f0a500; }
+
+        /* Portfolio */
+        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .project-card { background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .project-card img { width: 100%; height: 180px; object-fit: cover; }
+        .project-card h3 { padding: 0.5rem 1rem; color: #f0a500; }
+        .project-card p { padding: 0 1rem 1rem 1rem; color: #ddd; }
+        .project-card .btn { margin: 0 1rem 1rem 1rem; display: block; text-align: center; }
+
+        /* Contact */
+        #contact p { text-align: center; margin: 0.5rem 0; color: #ddd; }
+
+        /* Footer */
+        footer { text-align: center; padding: 1rem 0; color: #fff; background: rgba(0,0,0,0.7); }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            ul { display: none; flex-direction: column; background: rgba(0,0,0,0.9); position: absolute; top: 70px; right: 0; width: 200px; }
+            ul.active { display: flex; }
+            .burger { display: flex; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">Ricky Chapau</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div></div><div></div><div></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="hero-content">
+            <img src="https://via.placeholder.com/160" alt="Ricky Chapau">
+            <h1>Hello, I'm Ricky</h1>
+            <p>Cybersecurity & IT Enthusiast</p>
+            <a href="#portfolio" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a cybersecurity and IT enthusiast with experience in Unix, Python, JavaScript, C++, and C#. I enjoy building secure systems and developing efficient software solutions.</p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">Python</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Unix/Linux</div>
+            <div class="skill">C++ / C#</div>
+            <div class="skill">Networking</div>
+            <div class="skill">Cybersecurity</div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="projects">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x180" alt="Project 1">
+                <h3>Project One</h3>
+                <p>Short description of the project highlighting skills used.</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x180" alt="Project 2">
+                <h3>Project Two</h3>
+                <p>Short description of the project highlighting skills used.</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:rchapau@pngdataco.com">rchapau@pngdataco.com</a></p>
+        <p>Connect on: <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Ricky Chapau. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Burger menu toggle
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('nav ul');
+        burger.addEventListener('click', () => { nav.classList.toggle('active'); });
+
+        // Smooth scroll offset for fixed navbar
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function(e){
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
+                if(nav.classList.contains('active')) nav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
