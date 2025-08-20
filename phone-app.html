@@ -4,30 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone App Project | Ricky Chapau</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link your main CSS -->
+    <style>
+        /* ===== Base & Reset ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+        body { line-height: 1.6; color: #fff; background: #0f0c29; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); }
+        a { text-decoration: none; color: inherit; }
+
+        /* Navbar */
+        header { width: 100%; position: fixed; top: 0; left: 0; z-index: 1000; background: rgba(0,0,0,0.7); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #f0a500; }
+        ul { display: flex; list-style: none; }
+        li { margin-left: 2rem; }
+        li a { color: #fff; font-weight: 500; transition: 0.3s; }
+        li a:hover { color: #f0a500; }
+
+        /* Burger */
+        .burger { display: none; cursor: pointer; flex-direction: column; }
+        .burger div { width: 25px; height: 3px; background: #fff; margin: 4px 0; transition: all 0.3s ease; }
+
+        /* Sections */
+        section { padding: 5rem 2rem; max-width: 1000px; margin: auto; animation: fadeIn 1.2s ease-in; }
+        h1, h2 { color: #f0a500; text-shadow: 1px 1px 3px #000; margin-bottom: 1rem; }
+        h2 { text-align: center; margin-bottom: 2rem; font-size: 2.2rem; }
+        p, li { color: #ddd; margin-bottom: 1rem; }
+
+        /* Buttons */
+        .btn { display: inline-block; padding: 0.7rem 1.5rem; background: #f0a500; color: #fff; border-radius: 5px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .btn:hover { background: #fff; color: #f0a500; transform: translateY(-3px); }
+
+        /* Footer */
+        footer { text-align: center; padding: 1rem 0; color: #fff; background: rgba(0,0,0,0.7); }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            ul { display: none; flex-direction: column; background: rgba(0,0,0,0.9); position: absolute; top: 70px; right: 0; width: 200px; }
+            ul.active { display: flex; }
+            .burger { display: flex; }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navbar -->
     <header>
         <nav>
             <div class="logo">Ricky Chapau</div>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#skills">Skills</a></li>
                 <li><a href="index.html#portfolio">Portfolio</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
+            <div class="burger">
+                <div></div><div></div><div></div>
+            </div>
         </nav>
     </header>
 
-    <section style="padding: 5rem 2rem; max-width: 800px; margin:auto;">
+    <!-- Project Content -->
+    <section>
         <h1>Phone App Project</h1>
-        <img src="https://raw.githubusercontent.com/rickychapau/rickycmolean/main/Phone%20App.png" alt="Phone App Project" style="width:100%; max-width:400px; margin-bottom:1rem;">
-        <p>This mobile application allows users to book rides and order food seamlessly. It includes features like real-time driver tracking, secure payments, and an intuitive interface for a smooth user experience.</p>
+        <img src="https://raw.githubusercontent.com/rickychapau/rickycmolean/main/Phone%20App.png" 
+             alt="Phone App Project" 
+             style="width:100%; max-width:400px; margin-bottom:1rem; border-radius:10px;">
+        <p>This mobile application allows users to book rides and order food seamlessly. It features real-time driver tracking, secure payments, and an intuitive interface to ensure a smooth user experience.</p>
+
+        <h2>Features:</h2>
+        <ul>
+            <li>Real-time driver tracking.</li>
+            <li>Secure in-app payments.</li>
+            <li>User-friendly interface for booking rides and ordering food.</li>
+            <li>Responsive design for all devices.</li>
+            <li>Optimized for performance and speed.</li>
+        </ul>
+
         <a href="index.html#portfolio" class="btn">Back to Portfolio</a>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Ricky Chapau. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Burger menu toggle
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('nav ul');
+        burger.addEventListener('click', () => { nav.classList.toggle('active'); });
+    </script>
 </body>
 </html>
